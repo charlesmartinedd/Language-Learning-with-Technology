@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://YOUR_USERNAME.github.io',
+  site: 'https://charlesmartinedd.github.io',
   base: '/Language-Learning-with-Technology',
   outDir: './dist',
   publicDir: './public',
