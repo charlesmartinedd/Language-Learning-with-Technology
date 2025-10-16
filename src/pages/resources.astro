@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const categories = [
+  {
+    title: 'Language Learning Apps',
+    icon: '📱',
+    resources: [
+      { name: 'Duolingo', type: 'App', ageRange: '7+', description: 'Gamified language learning with adaptive lessons' },
+      { name: 'Rosetta Stone Kids', type: 'App', ageRange: '3-8', description: 'Immersive learning for young children' },
+      { name: 'Babbel', type: 'App', ageRange: '13+', description: 'Conversation-focused language courses' },
+      { name: 'Lingokids', type: 'App', ageRange: '2-8', description: 'English learning through play' },
+    ],
+  },
+  {
+    title: 'Interactive Platforms',
+    icon: '💻',
+    resources: [
+      { name: 'Khan Academy Kids', type: 'Platform', ageRange: '2-8', description: 'Comprehensive early learning platform' },
+      { name: 'ABCmouse', type: 'Platform', ageRange: '2-8', description: 'Full curriculum with language arts' },
+      { name: 'Starfall', type: 'Platform', ageRange: '4-9', description: 'Reading and phonics activities' },
+      { name: 'Epic!', type: 'Platform', ageRange: '5-12', description: 'Digital library for kids' },
+    ],
+  },
+  {
+    title: 'Practice Tools',
+    icon: '🎯',
+    resources: [
+      { name: 'Quizlet', type: 'Tool', ageRange: '8+', description: 'Flashcards and study games' },
+      { name: 'Kahoot!', type: 'Tool', ageRange: '6+', description: 'Interactive quizzes and games' },
+      { name: 'Memrise', type: 'Tool', ageRange: '10+', description: 'Vocabulary building with spaced repetition' },
+      { name: 'Anki', type: 'Tool', ageRange: '12+', description: 'Advanced flashcard system' },
+    ],
+  },
+];
+
+const checklists = [
+  {
+    title: 'App Evaluation Checklist',
+    icon: '✅',
+    items: [
+      'Age-appropriate content and interface',
+      'Clear learning objectives and progress tracking',
+      'Balance of input and output activities',
+      'Quality audio and pronunciation models',
+      'Engaging but not overstimulating design',
+      'Privacy and data protection standards',
+    ],
+  },
+  {
+    title: 'Daily Routine Planner',
+    icon: '📅',
+    items: [
+      'Set consistent time slots for language practice',
+      'Mix different types of activities (apps, reading, conversation)',
+      'Include parent-child co-learning time',
+      'Build in breaks to prevent fatigue',
+      'Track weekly progress and celebrate wins',
+      'Adjust schedule based on child\'s feedback',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Resources - Language Learning with Technology"
+  description="Curated tools, apps, and resources for supporting children's language learning with technology."
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-white py-16 md:py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <h1 class="text-gray-900">Learning Resources</h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            Curated tools, apps, and materials to support your child's language learning journey
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended Tools -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto space-y-16">
+          {categories.map((category) => (
+            <div>
+              <div class="flex items-center space-x-3 mb-8">
+                <span class="text-4xl">{category.icon}</span>
+                <h2 class="text-3xl font-bold text-gray-900">{category.title}</h2>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {category.resources.map((resource) => (
+                  <div class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-primary-200 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-3">
+                      <h3 class="text-xl font-semibold text-gray-900">{resource.name}</h3>
+                      <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full">
+                        {resource.ageRange}
+                      </span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">{resource.type}</p>
+                    <p class="text-gray-600 leading-relaxed">{resource.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloadable Checklists -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-center text-gray-900 mb-12">Downloadable Checklists</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {checklists.map((checklist) => (
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-4">
+                  <div class="flex items-center space-x-3">
+                    <span class="text-3xl">{checklist.icon}</span>
+                    <h3 class="text-xl font-bold text-white">{checklist.title}</h3>
+                  </div>
+                </div>
+
+                <div class="p-6">
+                  <ul class="space-y-3 mb-6">
+                    {checklist.items.map((item) => (
+                      <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-gray-700 text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    class="btn-secondary w-full"
+                    onclick="alert('Download functionality coming soon! Contact us to request these resources.')"
+                  >
+                    Download PDF
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selection Guide -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-center text-gray-900 mb-12">How to Choose the Right Tools</h2>
+
+          <div class="space-y-8">
+            <div class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 border-l-4 border-primary-600">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">For Young Learners (Ages 2-6)</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Prioritize visual and auditory engagement</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Choose apps with simple, intuitive interfaces</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Look for parent co-play opportunities</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 border-l-4 border-accent-600">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">For School-Age Children (Ages 7-12)</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-accent-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Balance game-like features with learning depth</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-accent-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Seek progress tracking and achievement systems</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-accent-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Encourage increasing independence with periodic check-ins</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 border-l-4 border-primary-600">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">For Teens (Ages 13+)</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Focus on real-world application and conversation practice</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Provide tools for self-directed learning</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span class="text-gray-700">Consider platforms connecting with native speakers</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center space-y-6">
+          <h2 class="text-white">Need Personalized Recommendations?</h2>
+          <p class="text-xl text-primary-50">
+            Get expert guidance tailored to your child's specific needs and learning goals.
+          </p>
+          <a href="/contact" class="btn bg-white text-primary-600 hover:bg-primary-50 inline-flex">
+            Get Expert Advice
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,668 @@
+---
+interface Props {
+  lessonId: string;
+}
+
+const { lessonId } = Astro.props;
+---
+
+<div class="quiz-container" id={`quiz-${lessonId}`}>
+  <div class="quiz-header">
+    <h2>📝 Knowledge Check Quiz</h2>
+    <p>Test your understanding of this lesson. You need 70% to pass and earn your certificate!</p>
+  </div>
+
+  <div class="quiz-content">
+    <div class="question-card" data-question="1">
+      <h3>Question 1</h3>
+      <p>According to research, children using app-based learning show what percentage increase in engagement compared to traditional methods?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q1" value="a" />
+          <span>65%</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="b" />
+          <span>83% ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="c" />
+          <span>94%</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="d" />
+          <span>50%</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="2">
+      <h3>Question 2</h3>
+      <p>True or False: AI tutors should completely replace human interaction in language learning.</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q2" value="a" />
+          <span>True</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="b" />
+          <span>False ✓</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="3">
+      <h3>Question 3</h3>
+      <p>Which app is described as best for beginners and consistent daily practice?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q3" value="a" />
+          <span>Duolingo ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="b" />
+          <span>Babbel Kids</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="c" />
+          <span>Memrise</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="d" />
+          <span>ChatGPT</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="4">
+      <h3>Question 4</h3>
+      <p>How many days does research suggest it takes to form a new habit?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q4" value="a" />
+          <span>7-14 days</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="b" />
+          <span>21-66 days ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="c" />
+          <span>100 days</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="d" />
+          <span>30 days exactly</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="5">
+      <h3>Question 5</h3>
+      <p>True or False: Consistency matters more than intensity in language learning.</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q5" value="a" />
+          <span>True ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="b" />
+          <span>False</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="6">
+      <h3>Question 6</h3>
+      <p>What is the recommended minimum weekly goal for days practiced?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q6" value="a" />
+          <span>3+ days</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="b" />
+          <span>5+ days ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="c" />
+          <span>7 days (every day)</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="d" />
+          <span>2+ days</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="7">
+      <h3>Question 7</h3>
+      <p>Which of these should you NOT obsess over when tracking progress?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q7" value="a" />
+          <span>Days practiced per week</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="b" />
+          <span>Perfection percentage ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="c" />
+          <span>Consistency indicators</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="d" />
+          <span>Time invested</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="8">
+      <h3>Question 8</h3>
+      <p>True or False: You should check your child's app dashboard daily to monitor progress.</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q8" value="a" />
+          <span>True</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q8" value="b" />
+          <span>False ✓</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="9">
+      <h3>Question 9</h3>
+      <p>For ages 8-10, what is the recommended daily practice time?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q9" value="a" />
+          <span>10 minutes</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="b" />
+          <span>15 minutes</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="c" />
+          <span>20 minutes ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="d" />
+          <span>30 minutes</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+
+    <div class="question-card" data-question="10">
+      <h3>Question 10</h3>
+      <p>Which is the best way to use AI tutors like ChatGPT for language learning?</p>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q10" value="a" />
+          <span>For grammar explanations only</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="b" />
+          <span>For conversation practice with custom prompts ✓</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="c" />
+          <span>As a replacement for all other apps</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="d" />
+          <span>Only for advanced learners</span>
+        </label>
+      </div>
+      <div class="feedback" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div class="quiz-actions">
+    <button id="submitQuiz" class="btn-primary">Submit Quiz</button>
+    <button id="retryQuiz" class="btn-secondary" style="display: none;">Retry Quiz</button>
+  </div>
+
+  <div id="quizResults" class="quiz-results" style="display: none;">
+    <div class="results-content"></div>
+  </div>
+</div>
+
+<style>
+  .quiz-container {
+    background: #f9fafb;
+    border: 3px solid #1e40af;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .quiz-header h2 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-header p {
+    color: #6b7280;
+  }
+
+  .question-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .question-card.correct {
+    border-color: #10b981;
+    background: #d1fae5;
+  }
+
+  .question-card.incorrect {
+    border-color: #ef4444;
+    background: #fee2e2;
+  }
+
+  .question-card h3 {
+    color: #1e40af;
+    margin-top: 0;
+    font-size: 1.125rem;
+  }
+
+  .question-card p {
+    color: #374151;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.6;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .option:hover {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+  }
+
+  .option input[type="radio"] {
+    margin-right: 0.75rem;
+    cursor: pointer;
+  }
+
+  .option span {
+    flex: 1;
+    color: #374151;
+  }
+
+  .option.selected {
+    border-color: #3b82f6;
+    background: #dbeafe;
+  }
+
+  .option.correct-answer {
+    border-color: #10b981;
+    background: #d1fae5;
+  }
+
+  .option.incorrect-answer {
+    border-color: #ef4444;
+    background: #fee2e2;
+  }
+
+  .feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .feedback.correct {
+    background: #d1fae5;
+    color: #065f46;
+    border: 2px solid #10b981;
+  }
+
+  .feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 2px solid #ef4444;
+  }
+
+  .quiz-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: #1e40af;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #1e3a8a;
+  }
+
+  .btn-primary:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #1e40af;
+    border: 2px solid #1e40af;
+  }
+
+  .btn-secondary:hover {
+    background: #f0f9ff;
+  }
+
+  .quiz-results {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    border: 3px solid #1e40af;
+  }
+
+  .results-content {
+    text-align: center;
+  }
+
+  .score-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  .score-display.pass {
+    color: #10b981;
+  }
+
+  .score-display.fail {
+    color: #ef4444;
+  }
+
+  .result-message {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    color: #374151;
+  }
+
+  .certificate-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: #1e40af;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .certificate-link:hover {
+    background: #1e3a8a;
+  }
+
+  .review-summary {
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  .review-item {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .review-item.correct {
+    background: #d1fae5;
+  }
+
+  .review-item.incorrect {
+    background: #fee2e2;
+  }
+
+  @media (max-width: 768px) {
+    .quiz-container {
+      padding: 1rem;
+    }
+
+    .quiz-actions {
+      flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  const correctAnswers = {
+    q1: 'b',  // 83%
+    q2: 'b',  // False - complement, don't replace
+    q3: 'a',  // Duolingo
+    q4: 'b',  // 21-66 days
+    q5: 'a',  // True - consistency > intensity
+    q6: 'b',  // 5+ days
+    q7: 'b',  // Don't obsess over perfection percentage
+    q8: 'b',  // False - check weekly, not daily
+    q9: 'c',  // 20 minutes
+    q10: 'b'  // Conversation practice with prompts
+  };
+
+  const explanations = {
+    q1: '83% of children show increased engagement with app-based learning according to recent research.',
+    q2: 'AI tutors complement human interaction but should not replace it. They work best alongside real conversations and cultural experiences.',
+    q3: 'Duolingo is described as best for beginners with its gamified lessons and consistent daily practice approach.',
+    q4: 'Research shows it takes 21-66 days to form a new habit, depending on complexity and consistency.',
+    q5: 'A child practicing 10 minutes daily will outperform one who crams an hour weekly. Consistency is key.',
+    q6: 'The lesson recommends aiming for 5+ days of practice per week as a weekly goal.',
+    q7: 'You should focus on effort and consistency, not perfection. Mistakes are part of learning.',
+    q8: 'The lesson recommends checking weekly, not daily, to avoid micromanaging and reduce pressure.',
+    q9: 'For ages 8-10, the recommended routine is 20 minutes total daily practice.',
+    q10: 'AI tutors like ChatGPT are best used for conversation practice with custom prompts tailored to your child\'s level.'
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const submitBtn = document.getElementById('submitQuiz');
+    const retryBtn = document.getElementById('retryQuiz');
+    const resultsDiv = document.getElementById('quizResults');
+    const questionCards = document.querySelectorAll('.question-card');
+
+    // Track selected answers
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+      option.addEventListener('click', function() {
+        const radio = this.querySelector('input[type="radio"]');
+        radio.checked = true;
+
+        // Remove selected class from siblings
+        const siblings = this.parentElement.querySelectorAll('.option');
+        siblings.forEach(sib => sib.classList.remove('selected'));
+
+        // Add selected class to this option
+        this.classList.add('selected');
+      });
+    });
+
+    // Submit quiz
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      let answered = 0;
+      const totalQuestions = Object.keys(correctAnswers).length;
+      const reviewItems = [];
+
+      // Check each question
+      for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = `q${i}`;
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+
+        if (selectedOption) {
+          answered++;
+          const questionCard = document.querySelector(`[data-question="${i}"]`);
+          const feedback = questionCard.querySelector('.feedback');
+          const isCorrect = selectedOption.value === correctAnswers[questionName];
+
+          if (isCorrect) {
+            score++;
+            questionCard.classList.add('correct');
+            selectedOption.closest('.option').classList.add('correct-answer');
+            feedback.classList.add('correct');
+            feedback.innerHTML = `✓ Correct! ${explanations[questionName]}`;
+            reviewItems.push({ question: i, correct: true });
+          } else {
+            questionCard.classList.add('incorrect');
+            selectedOption.closest('.option').classList.add('incorrect-answer');
+
+            // Highlight correct answer
+            const correctOption = questionCard.querySelector(`input[value="${correctAnswers[questionName]}"]`);
+            correctOption.closest('.option').classList.add('correct-answer');
+
+            feedback.classList.add('incorrect');
+            feedback.innerHTML = `✗ Incorrect. ${explanations[questionName]}`;
+            reviewItems.push({ question: i, correct: false });
+          }
+
+          feedback.style.display = 'block';
+        }
+      }
+
+      if (answered < totalQuestions) {
+        alert(`Please answer all ${totalQuestions} questions before submitting.`);
+        return;
+      }
+
+      // Calculate percentage
+      const percentage = Math.round((score / totalQuestions) * 100);
+      const passed = percentage >= 70;
+
+      // Build review summary
+      let reviewHTML = '<div class="review-summary"><h4>Question Review:</h4>';
+      reviewItems.forEach(item => {
+        const icon = item.correct ? '✓' : '✗';
+        const className = item.correct ? 'correct' : 'incorrect';
+        reviewHTML += `<div class="review-item ${className}">${icon} Question ${item.question}</div>`;
+      });
+      reviewHTML += '</div>';
+
+      // Show results
+      resultsDiv.querySelector('.results-content').innerHTML = `
+        <div class="score-display ${passed ? 'pass' : 'fail'}">${percentage}%</div>
+        <div class="result-message">
+          ${passed
+            ? `<strong>🎉 Congratulations! You passed!</strong><br>You answered ${score} out of ${totalQuestions} questions correctly.`
+            : `<strong>Keep learning!</strong><br>You scored ${score} out of ${totalQuestions}. You need 70% to pass. Review the material and try again!`
+          }
+        </div>
+        ${reviewHTML}
+        ${passed
+          ? `<a href="/course/certificate/?lesson=1&score=${percentage}" class="certificate-link" target="_blank">🎓 Get Your Certificate</a>`
+          : ''
+        }
+      `;
+
+      resultsDiv.style.display = 'block';
+      submitBtn.style.display = 'none';
+      retryBtn.style.display = passed ? 'none' : 'inline-block';
+
+      // Scroll to results
+      resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Save result to localStorage
+      localStorage.setItem('lesson-1-quiz-score', JSON.stringify({
+        score,
+        total: totalQuestions,
+        percentage,
+        passed,
+        timestamp: Date.now()
+      }));
+    });
+
+    // Retry quiz
+    retryBtn.addEventListener('click', () => {
+      // Reset all questions
+      questionCards.forEach(card => {
+        card.classList.remove('correct', 'incorrect');
+        card.querySelectorAll('.option').forEach(opt => {
+          opt.classList.remove('selected', 'correct-answer', 'incorrect-answer');
+        });
+        card.querySelectorAll('input[type="radio"]').forEach(radio => {
+          radio.checked = false;
+        });
+        card.querySelector('.feedback').style.display = 'none';
+      });
+
+      resultsDiv.style.display = 'none';
+      submitBtn.style.display = 'inline-block';
+      retryBtn.style.display = 'none';
+
+      // Scroll to top of quiz
+      document.querySelector('.quiz-container').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Check if quiz was already completed
+    const savedResult = localStorage.getItem('lesson-1-quiz-score');
+    if (savedResult) {
+      const data = JSON.parse(savedResult);
+      if (data.passed) {
+        const banner = document.createElement('div');
+        banner.className = 'quiz-completed-banner';
+        banner.innerHTML = `
+          <p>✓ You've already completed this quiz with a score of ${data.percentage}%.
+          <a href="/course/certificate/?lesson=1&score=${data.percentage}" target="_blank">View Certificate</a></p>
+        `;
+        banner.style.cssText = 'background: #d1fae5; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; text-align: center; border: 2px solid #10b981;';
+        document.querySelector('.quiz-container').prepend(banner);
+      }
+    }
+  });
+</script>

@@ -1,0 +1,278 @@
+{
+  "lighthouseVersion": "11.0.0",
+  "fetchTime": "PENDING",
+  "finalUrl": "http://localhost:8000/index.html",
+  "requestedUrl": "http://localhost:8000/index.html",
+  "runWarnings": [],
+  "environment": {
+    "networkUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "hostUserAgent": "Chrome/119.0.0.0",
+    "benchmarkIndex": 0
+  },
+  "audits": {
+    "note": "This is a template. Actual scores will be populated after running Lighthouse audit."
+  },
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "title": "Performance",
+      "score": null,
+      "description": "These checks ensure this page is optimized for users on slow connections or underpowered devices.",
+      "manualDescription": "Run: lighthouse http://localhost:8000 --only-categories=performance",
+      "auditRefs": [
+        "first-contentful-paint",
+        "largest-contentful-paint",
+        "speed-index",
+        "cumulative-layout-shift",
+        "total-blocking-time"
+      ],
+      "target": "≥ 90"
+    },
+    "accessibility": {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "score": null,
+      "description": "These checks highlight opportunities to improve the accessibility of your web app.",
+      "manualDescription": "Run: lighthouse http://localhost:8000 --only-categories=accessibility",
+      "auditRefs": [
+        "aria-allowed-attr",
+        "aria-required-attr",
+        "aria-valid-attr-value",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "duplicate-id-active",
+        "html-has-lang",
+        "image-alt",
+        "label",
+        "link-name",
+        "list",
+        "listitem",
+        "meta-viewport",
+        "tabindex"
+      ],
+      "target": "≥ 90"
+    },
+    "best-practices": {
+      "id": "best-practices",
+      "title": "Best Practices",
+      "score": null,
+      "description": "These checks ensure you're following web development best practices.",
+      "manualDescription": "Run: lighthouse http://localhost:8000 --only-categories=best-practices",
+      "auditRefs": [
+        "errors-in-console",
+        "image-aspect-ratio",
+        "image-size-responsive",
+        "doctype",
+        "charset",
+        "no-vulnerable-libraries",
+        "valid-source-maps"
+      ],
+      "target": "≥ 90"
+    },
+    "seo": {
+      "id": "seo",
+      "title": "SEO",
+      "score": null,
+      "description": "These checks ensure this page is optimized for search engine results ranking.",
+      "manualDescription": "Run: lighthouse http://localhost:8000 --only-categories=seo",
+      "auditRefs": [
+        "meta-description",
+        "http-status-code",
+        "link-text",
+        "is-crawlable",
+        "robots-txt",
+        "hreflang",
+        "canonical"
+      ],
+      "target": "≥ 90"
+    }
+  },
+  "expectedResults": {
+    "performance": {
+      "first-contentful-paint": {
+        "title": "First Contentful Paint",
+        "target": "< 1.8s",
+        "weight": 10
+      },
+      "largest-contentful-paint": {
+        "title": "Largest Contentful Paint",
+        "target": "< 2.5s",
+        "weight": 25
+      },
+      "speed-index": {
+        "title": "Speed Index",
+        "target": "< 3.4s",
+        "weight": 10
+      },
+      "total-blocking-time": {
+        "title": "Total Blocking Time",
+        "target": "< 200ms",
+        "weight": 30
+      },
+      "cumulative-layout-shift": {
+        "title": "Cumulative Layout Shift",
+        "target": "< 0.1",
+        "weight": 25
+      }
+    },
+    "accessibility": {
+      "aria-allowed-attr": {
+        "title": "ARIA attributes are allowed for an element's role",
+        "weight": "critical"
+      },
+      "color-contrast": {
+        "title": "Background and foreground colors have a sufficient contrast ratio",
+        "weight": "critical"
+      },
+      "image-alt": {
+        "title": "Image elements have [alt] attributes",
+        "weight": "critical"
+      },
+      "label": {
+        "title": "Form elements have associated labels",
+        "weight": "critical"
+      },
+      "document-title": {
+        "title": "Document has a <title> element",
+        "weight": "critical"
+      }
+    }
+  },
+  "testingInstructions": {
+    "setup": [
+      "1. Install Lighthouse: npm install -g lighthouse",
+      "2. Build website: npm run build",
+      "3. Start local server: cd dist/site && python3 -m http.server 8000",
+      "4. Run audit: lighthouse http://localhost:8000 --output json --output-path reports/lighthouse-scores.json"
+    ],
+    "commands": {
+      "allCategories": "lighthouse http://localhost:8000 --output json html --output-path reports/lighthouse-full",
+      "performanceOnly": "lighthouse http://localhost:8000 --only-categories=performance --output json",
+      "accessibilityOnly": "lighthouse http://localhost:8000 --only-categories=accessibility --output json",
+      "bestPracticesOnly": "lighthouse http://localhost:8000 --only-categories=best-practices --output json",
+      "seoOnly": "lighthouse http://localhost:8000 --only-categories=seo --output json",
+      "mobileSimulation": "lighthouse http://localhost:8000 --preset=mobile --output json",
+      "desktopSimulation": "lighthouse http://localhost:8000 --preset=desktop --output json",
+      "withThrottling": "lighthouse http://localhost:8000 --throttling.cpuSlowdownMultiplier=4 --output json",
+      "pwa": "lighthouse http://localhost:8000 --only-categories=pwa --output json"
+    },
+    "interpretingScores": {
+      "0-49": "Poor (Red) - Significant improvements needed",
+      "50-89": "Needs Improvement (Orange) - Some optimization required",
+      "90-100": "Good (Green) - Meets or exceeds standards"
+    }
+  },
+  "commonIssues": {
+    "performance": [
+      {
+        "issue": "Large image files",
+        "fix": "Compress images, use WebP format, implement lazy loading"
+      },
+      {
+        "issue": "Render-blocking resources",
+        "fix": "Defer non-critical CSS/JS, inline critical CSS"
+      },
+      {
+        "issue": "Slow server response",
+        "fix": "Optimize server, use CDN, enable caching"
+      },
+      {
+        "issue": "Unoptimized JavaScript",
+        "fix": "Minify JS, remove unused code, code splitting"
+      }
+    ],
+    "accessibility": [
+      {
+        "issue": "Missing alt text",
+        "fix": "Add descriptive alt attributes to all images"
+      },
+      {
+        "issue": "Low color contrast",
+        "fix": "Increase contrast ratio to ≥4.5:1 for normal text"
+      },
+      {
+        "issue": "Form inputs without labels",
+        "fix": "Associate labels with inputs using for/id"
+      },
+      {
+        "issue": "Missing document title",
+        "fix": "Add unique <title> to each page"
+      }
+    ],
+    "bestPractices": [
+      {
+        "issue": "Console errors",
+        "fix": "Debug and resolve all JavaScript errors"
+      },
+      {
+        "issue": "Incorrect image aspect ratios",
+        "fix": "Set explicit width/height to prevent layout shift"
+      },
+      {
+        "issue": "Vulnerable libraries",
+        "fix": "Update dependencies to latest secure versions"
+      }
+    ],
+    "seo": [
+      {
+        "issue": "Missing meta description",
+        "fix": "Add <meta name='description' content='...'>"
+      },
+      {
+        "issue": "Non-descriptive link text",
+        "fix": "Use descriptive text instead of 'click here'"
+      },
+      {
+        "issue": "Missing canonical URL",
+        "fix": "Add <link rel='canonical' href='...'>"
+      }
+    ]
+  },
+  "automatedTestScript": {
+    "filename": "scripts/test-lighthouse.sh",
+    "content": "#!/bin/bash\necho 'Starting Lighthouse tests...'\ncd dist/site\npython3 -m http.server 8000 &\nSERVER_PID=$!\nsleep 2\ncd ../..\nlighthouse http://localhost:8000 --output json html --output-path reports/lighthouse-scores\nkill $SERVER_PID\necho 'Lighthouse tests complete. Results in reports/lighthouse-scores.report.json'"
+  },
+  "ciIntegration": {
+    "githubActions": {
+      "example": "- name: Run Lighthouse CI\n  uses: treosh/lighthouse-ci-action@v10\n  with:\n    urls: |\n      http://localhost:8000\n      http://localhost:8000/chapter1.html\n    uploadArtifacts: true"
+    }
+  },
+  "status": "PENDING - No website built yet",
+  "nextSteps": [
+    "1. Build website (generate HTML/CSS/JS files)",
+    "2. Start local server",
+    "3. Run Lighthouse audit for each page",
+    "4. Review scores and recommendations",
+    "5. Fix issues that bring scores below 90",
+    "6. Re-run audits to verify improvements",
+    "7. Document final scores in this file"
+  ],
+  "targetScores": {
+    "performance": "≥ 90",
+    "accessibility": "≥ 90",
+    "bestPractices": "≥ 90",
+    "seo": "≥ 90"
+  },
+  "pageUrls": [
+    "http://localhost:8000/index.html",
+    "http://localhost:8000/chapter1.html",
+    "http://localhost:8000/chapter2.html",
+    "http://localhost:8000/chapter3.html",
+    "http://localhost:8000/chapter4.html",
+    "http://localhost:8000/chapter5.html",
+    "http://localhost:8000/chapter6.html",
+    "http://localhost:8000/chapter7.html",
+    "http://localhost:8000/chapter8.html",
+    "http://localhost:8000/chapter9.html",
+    "http://localhost:8000/chapter10.html"
+  ],
+  "notes": [
+    "Test on mobile and desktop presets",
+    "Test with various throttling settings to simulate real-world conditions",
+    "Focus on fixing critical accessibility issues first",
+    "Performance optimizations may require code splitting and lazy loading",
+    "All scores should be ≥90 before deployment"
+  ]
+}

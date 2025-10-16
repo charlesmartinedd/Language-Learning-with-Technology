@@ -1,0 +1,28 @@
+{
+  "name": "language-learning-with-technology",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Language Learning with Technology - Educational website based on dissertation research",
+  "author": "Charles Martin",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "build:check": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^4.16.17",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  }
+}

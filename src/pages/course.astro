@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const modules = [
+  {
+    number: 1,
+    title: 'Understanding Language Learning Foundations',
+    lessons: 5,
+    duration: '45 min',
+    description: 'Learn the science behind language acquisition and how technology can support natural learning processes.',
+    topics: ['How children learn languages', 'The role of input and output', 'Critical periods and windows of opportunity', 'Technology as a learning tool'],
+  },
+  {
+    number: 2,
+    title: 'Evaluating Educational Technology',
+    lessons: 6,
+    duration: '60 min',
+    description: 'Develop a framework for assessing and selecting appropriate technology tools for your child.',
+    topics: ['Quality indicators for educational apps', 'Understanding learning analytics', 'Privacy and safety considerations', 'Free vs. paid resources'],
+  },
+  {
+    number: 3,
+    title: 'Creating Effective Learning Routines',
+    lessons: 5,
+    duration: '50 min',
+    description: 'Design daily routines that integrate technology meaningfully into your child\'s language learning journey.',
+    topics: ['Balancing screen time', 'Building sustainable habits', 'Parent involvement strategies', 'Tracking progress effectively'],
+  },
+  {
+    number: 4,
+    title: 'Interactive Learning Strategies',
+    lessons: 7,
+    duration: '70 min',
+    description: 'Master techniques for maximizing engagement and learning outcomes through interactive technology use.',
+    topics: ['Co-viewing and co-playing', 'Asking the right questions', 'Extending learning beyond the screen', 'Cultural and contextual awareness'],
+  },
+  {
+    number: 5,
+    title: 'Troubleshooting Common Challenges',
+    lessons: 4,
+    duration: '40 min',
+    description: 'Address common obstacles and learn solutions for maintaining motivation and progress.',
+    topics: ['Overcoming resistance', 'Managing frustration', 'Adjusting difficulty levels', 'When to seek additional support'],
+  },
+];
+
+const features = [
+  {
+    icon: '🎥',
+    title: 'Video Lessons',
+    description: 'Expert instruction with real-world examples and demonstrations',
+  },
+  {
+    icon: '📝',
+    title: 'Worksheets & Guides',
+    description: 'Downloadable resources you can use immediately with your child',
+  },
+  {
+    icon: '💬',
+    title: 'Community Forum',
+    description: 'Connect with other parents and share experiences',
+  },
+  {
+    icon: '✅',
+    title: 'Progress Tracking',
+    description: 'Monitor your completion and revisit lessons anytime',
+  },
+  {
+    icon: '🎓',
+    title: 'Expert Support',
+    description: 'Direct access to Dr. Martin for questions and guidance',
+  },
+  {
+    icon: '🔄',
+    title: 'Lifetime Access',
+    description: 'Return to the course as your child grows and needs evolve',
+  },
+];
+---
+
+<BaseLayout
+  title="Interactive Course - Language Learning with Technology"
+  description="Comprehensive online course teaching parents how to effectively use technology to support children's language learning."
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-16 md:py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <div class="inline-flex items-center space-x-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span>Coming Soon</span>
+          </div>
+          <h1 class="text-gray-900">Interactive Parent Course</h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            A comprehensive online program designed to empower you with the knowledge and strategies
+            to support your child's language learning journey with confidence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-gray-900 mb-4">What You'll Learn</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              This course transforms you from overwhelmed to confident, providing a clear roadmap
+              for integrating technology into your child's language learning effectively.
+            </p>
+          </div>
+
+          <!-- Course Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div class="text-center p-6 bg-primary-50 rounded-xl">
+              <div class="text-4xl font-bold text-primary-600 mb-2">5</div>
+              <div class="text-sm text-gray-600">Modules</div>
+            </div>
+            <div class="text-center p-6 bg-accent-50 rounded-xl">
+              <div class="text-4xl font-bold text-accent-600 mb-2">27</div>
+              <div class="text-sm text-gray-600">Lessons</div>
+            </div>
+            <div class="text-center p-6 bg-primary-50 rounded-xl">
+              <div class="text-4xl font-bold text-primary-600 mb-2">4.5</div>
+              <div class="text-sm text-gray-600">Hours</div>
+            </div>
+            <div class="text-center p-6 bg-accent-50 rounded-xl">
+              <div class="text-4xl font-bold text-accent-600 mb-2">∞</div>
+              <div class="text-sm text-gray-600">Lifetime Access</div>
+            </div>
+          </div>
+
+          <!-- Module List -->
+          <div class="space-y-6">
+            {modules.map((module) => (
+              <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-lg transition-all">
+                <div class="p-6 md:p-8">
+                  <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                      <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">{module.number}</span>
+                      </div>
+                      <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                          {module.title}
+                        </h3>
+                        <p class="text-gray-600">{module.description}</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                      <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span>{module.lessons} lessons</span>
+                      </div>
+                      <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{module.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex flex-wrap gap-2">
+                      {module.topics.map((topic) => (
+                        <span class="px-3 py-1 bg-gray-50 text-gray-700 text-sm rounded-full">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Features -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-center text-gray-900 mb-12">Course Features</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+                <div class="text-4xl mb-4">{feature.icon}</div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Placeholder -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-center text-gray-900 mb-12">What Parents Are Saying</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-primary-50 rounded-2xl p-8 border-l-4 border-primary-600">
+              <div class="flex items-center mb-4">
+                <div class="flex space-x-1 text-yellow-400">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed italic mb-4">
+                "This course gave me the confidence I needed to introduce educational apps to my daughter.
+                The framework for evaluation was especially helpful!"
+              </p>
+              <p class="text-sm font-semibold text-gray-900">- Parent of 6-year-old</p>
+            </div>
+
+            <div class="bg-accent-50 rounded-2xl p-8 border-l-4 border-accent-600">
+              <div class="flex items-center mb-4">
+                <div class="flex space-x-1 text-yellow-400">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed italic mb-4">
+                "The practical strategies and real-world examples made all the difference.
+                My son is now excited about his daily language practice!"
+              </p>
+              <p class="text-sm font-semibold text-gray-900">- Parent of 9-year-old</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enrollment CTA -->
+    <section class="section-padding bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center space-y-8">
+          <h2 class="text-white">Be the First to Know</h2>
+          <p class="text-xl text-primary-50">
+            The course is currently in development. Join our waitlist to be notified when enrollment opens
+            and receive exclusive early-bird pricing.
+          </p>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <form class="space-y-4">
+              <div>
+                <label for="email" class="sr-only">Email address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                  class="w-full px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/50"
+                />
+              </div>
+              <button type="submit" class="btn bg-white text-primary-600 hover:bg-primary-50 w-full">
+                Join Waitlist
+              </button>
+            </form>
+          </div>
+
+          <p class="text-sm text-primary-100">
+            Or <a href="/contact" class="underline hover:text-white">contact us</a> with questions about the course.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
