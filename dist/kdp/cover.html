@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=2560, height=1600">
+    <title>Language Learning with Technology - Book Cover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            width: 2560px;
+            height: 1600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cover {
+            width: 2560px;
+            height: 1600px;
+            background: linear-gradient(135deg, #0f2847 0%, #1a5490 35%, #2563eb 70%, #60a5fa 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px;
+        }
+
+        /* Decorative background elements */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .circle-1 {
+            width: 800px;
+            height: 800px;
+            top: -200px;
+            right: -200px;
+        }
+
+        .circle-2 {
+            width: 600px;
+            height: 600px;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .circle-3 {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 2000px;
+        }
+
+        /* Icon container */
+        .icon-container {
+            margin-bottom: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .icon svg {
+            width: 70px;
+            height: 70px;
+            fill: white;
+        }
+
+        /* Title */
+        .title {
+            font-size: 140px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-line-1 {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .title-line-2 {
+            display: block;
+            background: linear-gradient(90deg, #fff 0%, #e0f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Subtitle */
+        .subtitle {
+            font-size: 48px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            margin-bottom: 100px;
+            max-width: 1800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Divider line */
+        .divider {
+            width: 400px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, white 50%, transparent 100%);
+            margin: 0 auto 100px;
+            opacity: 0.6;
+        }
+
+        /* Author */
+        .author {
+            font-size: 56px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .author-prefix {
+            font-size: 40px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-right: 12px;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                width: 2560px;
+                height: 1600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <!-- Background pattern -->
+        <div class="bg-pattern">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Icons -->
+            <div class="icon-container">
+                <!-- Globe/World icon -->
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+
+                <!-- Chat/Communication icon -->
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                    </svg>
+                </div>
+
+                <!-- Book/Learning icon -->
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="title">
+                <span class="title-line-1">Language Learning</span>
+                <span class="title-line-2">with Technology</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="subtitle">
+                Helping Parents Guide Digital Language Learning in 2025
+            </p>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Author -->
+            <p class="author">
+                <span class="author-prefix">by</span>Dr. Charles Martin
+            </p>
+        </div>
+    </div>
+</body>
+</html>

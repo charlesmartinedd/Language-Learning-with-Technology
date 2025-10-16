@@ -1,0 +1,387 @@
+\documentclass[11pt,oneside]{book}
+
+% ============================================================================
+% PACKAGES
+% ============================================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+% ============================================================================
+% PAGE LAYOUT - 6" x 9" BOOK (Standard KDP Size)
+% ============================================================================
+
+\geometry{
+  paperwidth=6in,
+  paperheight=9in,
+  top=0.75in,
+  bottom=0.75in,
+  inner=1in,        % Gutter for binding
+  outer=0.75in
+}
+
+% ============================================================================
+% TYPOGRAPHY
+% ============================================================================
+
+% Line spacing
+\setstretch{1.6}
+
+% Professional serif font (Georgia-like)
+\usepackage{mathptmx}  % Times-based font
+
+% Sans-serif for headings
+\renewcommand{\sfdefault}{phv} % Helvetica
+
+% Microtypography improvements
+\microtypesetup{
+  protrusion=true,
+  expansion=true,
+  tracking=true,
+  kerning=true
+}
+
+% ============================================================================
+% CHAPTER & SECTION FORMATTING
+% ============================================================================
+
+% Chapter formatting - centered, decorative
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\huge\bfseries\centering}
+  {}{0pt}
+  {\vspace{-20pt}\rule{100pt}{2pt}\\\vspace{12pt}\Huge}
+  [\vspace{12pt}]
+
+% Unnumbered chapters (Introduction, etc.)
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\sffamily\huge\bfseries\centering}
+  {}{0pt}
+  {\vspace{-20pt}\rule{100pt}{2pt}\\\vspace{12pt}\Huge}
+  [\vspace{12pt}]
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries}
+  {\thesubsection}{1em}{}
+
+% ============================================================================
+% HEADERS & FOOTERS
+% ============================================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Chapter opening pages: no header, page number in footer
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% ============================================================================
+% TABLE OF CONTENTS
+% ============================================================================
+
+\renewcommand{\cftchapfont}{\sffamily\bfseries}
+\renewcommand{\cftchappagefont}{\sffamily\bfseries}
+\renewcommand{\cftsecfont}{\rmfamily}
+\renewcommand{\cftsecpagefont}{\rmfamily}
+\setlength{\cftbeforechapskip}{12pt}
+\setlength{\cftbeforesecskip}{6pt}
+
+% ============================================================================
+% FRONT/MAIN/BACK MATTER
+% ============================================================================
+
+\newcommand{\frontmatter}{
+  \cleardoublepage
+  \pagenumbering{roman}
+  \setcounter{page}{1}
+}
+
+\newcommand{\mainmatter}{
+  \cleardoublepage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
+
+\newcommand{\backmatter}{
+  \cleardoublepage
+}
+
+% ============================================================================
+% LISTS
+% ============================================================================
+
+\setlist[itemize]{leftmargin=*,topsep=6pt,itemsep=4pt}
+\setlist[enumerate]{leftmargin=*,topsep=6pt,itemsep=4pt}
+
+% ============================================================================
+% QUOTES & SPECIAL ELEMENTS
+% ============================================================================
+
+% Blockquotes
+\renewenvironment{quote}
+  {\list{}{\leftmargin=3em\rightmargin=1em\itshape}\item[]}
+  {\endlist}
+
+% Tip boxes
+\newenvironment{tipbox}
+  {\begin{center}\begin{minipage}{0.9\textwidth}\small\itshape}
+  {\end{minipage}\end{center}}
+
+% ============================================================================
+% DOCUMENT BEGINS
+% ============================================================================
+
+\begin{document}
+
+% ----------------------------------------------------------------------------
+% TITLE PAGE
+% ----------------------------------------------------------------------------
+
+\begin{titlepage}
+\centering
+\vspace*{2in}
+
+{\Huge\sffamily\bfseries Technology-Powered Language Learning\par}
+
+\vspace{0.5in}
+
+{\Large\sffamily A Parent's Guide to Helping Your Child Master a New Language\par}
+
+\vspace{1.5in}
+
+{\large\sffamily By Dr. Charles Martin\par}
+
+\vfill
+
+{\large 2025\par}
+
+\end{titlepage}
+
+% ----------------------------------------------------------------------------
+% FRONT MATTER
+% ----------------------------------------------------------------------------
+
+\frontmatter
+
+% Copyright page
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\small
+
+Copyright 2025 by Charles Martin Jr.
+
+\vspace{12pt}
+
+All rights reserved. No part of this book may be reproduced in any form without written permission from the author.
+
+\vspace{12pt}
+
+Published 2025
+
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+% Dedication
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{2in}
+\begin{center}
+\itshape
+
+To my wife, Ginger, and my daughter Marie—thank you for your endless support and understanding throughout this journey. Your encouragement made this work possible.
+
+\vspace{0.5in}
+
+To all the parents working to give their children the gift of multilingualism—this book is for you.
+
+\end{center}
+\clearpage
+
+% Table of Contents
+\tableofcontents
+
+% ----------------------------------------------------------------------------
+% MAIN CONTENT
+% ----------------------------------------------------------------------------
+
+\mainmatter
+
+% ============================================================================
+% INTRODUCTION
+% ============================================================================
+
+\chapter*{Introduction: Why Technology Matters for Language Learning}
+\addcontentsline{toc}{chapter}{Introduction: Why Technology Matters for Language Learning}
+\markboth{Introduction}{Introduction}
+
+When I first started teaching English to third-graders in Abu Dhabi, I faced a challenge that many parents know well: How do you help children learn a new language when they're surrounded by their native tongue most of the day?
+
+My students were bright, motivated kids. They spoke Arabic fluently at home and with their friends. But when it came to English vocabulary—the foundation they needed for reading, writing, and academic success—they struggled. The traditional methods of flashcards and repetition weren't enough.
+
+Then I discovered something that changed everything: the right technology, used in the right way, could accelerate their learning dramatically.
+
+\section*{The Technology Revolution in Language Learning}
+
+We're living in an unprecedented time for language learners. Just a decade ago, learning a new language meant expensive tutors, rigid classroom schedules, or clunky computer programs. Today, your child has access to tools that would have seemed like science fiction:
+
+\begin{itemize}
+\item \textbf{AI tutors} that adapt to your child's learning pace and never lose patience
+\item \textbf{Real-time translation} that makes any content accessible in any language
+\item \textbf{Virtual reality} that transports learners to Paris, Tokyo, or Mexico City
+\item \textbf{Smart apps} that make vocabulary practice feel like playing a video game
+\item \textbf{Speech recognition} that provides instant pronunciation feedback
+\end{itemize}
+
+But here's the crucial part: technology alone isn't magic. I've seen expensive interactive whiteboards sit unused in classrooms. I've watched students tap mindlessly through language apps without retaining anything. The difference between technology that transforms learning and technology that wastes time comes down to how you use it.
+
+\section*{What This Book Will Teach You}
+
+As a parent, you don't need to become a technology expert or a linguistics professor. You just need to understand a few key principles about how children learn languages, and how to choose and use technology that supports that natural process.
+
+In this book, you'll discover:
+
+\textbf{The science of second language acquisition} — What research tells us about how children's brains process and retain new languages. You'll learn why some methods work and others fail, and how technology can enhance (or interfere with) natural learning processes.
+
+\textbf{How to evaluate digital tools} — Not all language apps are created equal. You'll learn to spot the difference between well-designed educational tools and glorified flashcards. We'll explore what makes technology effective for language learning.
+
+\textbf{2025's breakthrough technologies} — AI has fundamentally changed language learning. From ChatGPT tutors to real-time translation, I'll show you how to leverage these tools safely and effectively for your child.
+
+\textbf{Practical daily routines} — Learning a language isn't about marathon study sessions. It's about consistent, engaging practice. You'll get specific routines you can implement tomorrow.
+
+\textbf{How to track real progress} — Beyond app scores and streaks, you'll learn how to measure meaningful vocabulary growth and language development.
+
+\section*{My Journey from Classroom to Research}
+
+This book grows out of my doctoral research at the University of Florida, where I studied how interactive technology affects vocabulary development in young language learners. But more importantly, it comes from real experience with real children.
+
+I've taught second, third, fourth, fifth, and seventh grades. I've worked with English language learners from Arabic-speaking countries, with Spanish-speaking students in the United States, and with children from diverse linguistic backgrounds. I've seen what works in actual classrooms, not just in laboratory studies.
+
+What I learned surprised me. The most expensive technology wasn't always the most effective. The shiniest apps didn't always produce results. But when technology was thoughtfully designed and deliberately used, it could accomplish what hours of traditional instruction couldn't.
+
+% ============================================================================
+% NOTE: Full manuscript content would continue here
+% This template shows the structure and formatting
+% To complete: Insert remaining chapters following the same pattern
+% ============================================================================
+
+\chapter{Understanding How Children Learn Languages}
+
+[Chapter content here...]
+
+\chapter{Choosing the Right Digital Tools}
+
+[Chapter content here...]
+
+\chapter{AI-Powered Language Learning in 2025}
+
+[Chapter content here...]
+
+\chapter{Mobile Apps and Daily Practice}
+
+[Chapter content here...]
+
+\chapter{AR/VR Immersive Experiences}
+
+[Chapter content here...]
+
+\chapter{Creating a Learning Routine}
+
+[Chapter content here...]
+
+\chapter{Monitoring Progress and Staying Engaged}
+
+[Chapter content here...]
+
+% ----------------------------------------------------------------------------
+% BACK MATTER
+% ----------------------------------------------------------------------------
+
+\backmatter
+
+\chapter*{Glossary}
+\addcontentsline{toc}{chapter}{Glossary}
+
+\textbf{BICS (Basic Interpersonal Communication Skills)} — Everyday conversational language skills, typically developed within 1-3 years of language exposure.
+
+\textbf{CALP (Cognitive Academic Language Proficiency)} — Academic language skills needed for school success, requiring 5-7 years or more to develop.
+
+\textbf{Comprehensible Input} — Language content that is slightly above a learner's current level but still understandable through context, visuals, or prior knowledge.
+
+[Additional glossary terms...]
+
+\chapter*{Resources for Parents}
+\addcontentsline{toc}{chapter}{Resources for Parents}
+
+\section*{Websites}
+\begin{itemize}
+\item ActualFluency.com - Blog and podcast on language learning
+\item FluentU.com/blog - Language learning tips and strategies
+\item Omniglot.com - Comprehensive language learning resource
+\end{itemize}
+
+\section*{Books}
+\begin{itemize}
+\item \textit{Fluent Forever} by Gabriel Wyner
+\item \textit{How to Raise a Multilingual Child} by Barbara Zurer Pearson
+\item \textit{The Bilingual Edge} by Kendall King and Alison Mackey
+\end{itemize}
+
+[Additional resources...]
+
+\chapter*{About the Author}
+\addcontentsline{toc}{chapter}{About the Author}
+
+Dr. Charles Martin brings a unique combination of classroom teaching experience and cutting-edge research to the field of language education. He holds a doctoral degree from the University of Florida, where he specialized in educational technology and second language acquisition.
+
+Dr. Martin has taught students from second grade through seventh grade in diverse settings, including international schools in Abu Dhabi and schools in the United States. His research focuses on how interactive technology can accelerate vocabulary development in young language learners.
+
+\vspace{12pt}
+
+\textbf{Contact:}\\
+drcharlesmartinjr@alexandriasdesign.com
+
+% ============================================================================
+% END OF DOCUMENT
+% ============================================================================
+
+\end{document}
+
+% ============================================================================
+% COMPILATION INSTRUCTIONS
+% ============================================================================
+%
+% To compile this document:
+%
+%   pdflatex manuscript-latex.tex
+%   pdflatex manuscript-latex.tex  (run twice for TOC)
+%
+% Or upload to Overleaf.com for cloud compilation
+%
+% For best results, ensure you have a complete TeX distribution installed:
+%   - Windows: MiKTeX
+%   - Mac: MacTeX
+%   - Linux: TeX Live
+%
+% ============================================================================
