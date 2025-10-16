@@ -3,8 +3,12 @@ node_modules/
 .pnp
 .pnp.js
 
-# Build outputs
-dist/
+# Build outputs (keep documentation)
+dist/site/
+dist/course/*.pdf
+dist/kdp/*.epub
+dist/kdp/*.docx
+dist/kdp/cover.*
 .astro/
 .output/
 .vercel/
