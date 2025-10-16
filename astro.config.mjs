@@ -18,7 +18,7 @@ export default defineConfig({
     build: {
       cssCodeSplit: true,
       cssMinify: true,
-      minify: 'terser',
+      minify: 'esbuild',
       rollupOptions: {
         output: {
           manualChunks: undefined
