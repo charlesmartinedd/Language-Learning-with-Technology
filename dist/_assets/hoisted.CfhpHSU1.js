@@ -1,0 +1,1 @@
+import"./hoisted.BcFTPNx4.js";const e=document.querySelector("form");e?.addEventListener("submit",async t=>{t.preventDefault();const o=new FormData(e),r=Object.fromEntries(o);console.log("Form submitted:",r),alert("Thank you for your message! I will respond within 24-48 hours."),e.reset()});
